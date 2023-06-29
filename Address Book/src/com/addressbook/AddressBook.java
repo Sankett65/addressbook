@@ -77,6 +77,9 @@ class Contact{
     public static void addContact(Contact add){
         list.add(add);
     }
+    public static void removeContact(Contact remove,String firstName){
+        list.remove(remove);
+    }
 
     public static  ArrayList<Contact> getContact(){
         return list;
@@ -110,6 +113,12 @@ public class AddressBook {
 
         ArrayList<Contact> list=Contact.getContact();
         //System.out.println(Contact.getContact());
+        for (int i=0;i<list.size();i++){
+            System.out.println(list.get(i));
+        }
+
+        System.out.println("\n After removing");
+       Contact.removeContact(c3,"Rohit");
         for (int i=0;i<list.size();i++){
             System.out.println(list.get(i));
         }
