@@ -48,11 +48,44 @@ class Contact{
     public String getEmail() {
         return email;
     }
+    public static void addContact(Contact add){
+        list.add(add);
+    }
 
+    public static  ArrayList<Contact> getContact(){
+        return list;
+    }
 
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", zipNo=" + zipNo +
+                ", phoneNumber=" + phoneNumber +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
 public class AddressBook {
     public static void main(String[] args) {
+        Contact c=new Contact("Sanket","Jadhav","Dadar",400028,12345,"sanket@gmail.com");
+        Contact c1=new Contact("Swapnil","Jadhav","Matunga",400016,3546,"swapnil@gmail.com");
+        Contact c2=new Contact("Virat","Kholi","Bandup",400034,18,"virat@gmail.com");
+        Contact c3=new Contact("Rohit","Sharma","Vashi",400045,45,"rohit@gmail.com");
+
+        Contact.addContact(c);
+        Contact.addContact(c1);
+        Contact.addContact(c2);
+        Contact.addContact(c3);
+
+        ArrayList<Contact> list=Contact.getContact();
+        //System.out.println(Contact.getContact());
+        for (int i=0;i<list.size();i++){
+            System.out.println(list.get(i));
+        }
+
 
     }
 }
